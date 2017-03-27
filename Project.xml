@@ -8,7 +8,7 @@
 	<!--------------------------------WINDOW SETTINGS------------------------------->
 	
 	<!--These window settings apply to all targets-->
-	<window width="1800" height="1200" fps="60" background="#000000" hardware="true" vsync="true" />
+	<window width="900" height="600" fps="60" background="#000000" hardware="true" vsync="true" />
 	
 	<!--Web-specific-->
 	<window if="web"		orientation="landscape"  />
