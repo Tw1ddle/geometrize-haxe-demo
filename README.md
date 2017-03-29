@@ -6,13 +6,13 @@ HaxeFlixel demo code for [Primitive Haxe](https://github.com/Tw1ddle/primitive-h
 
 ## Usage
 
-This demo shows how images can be converted to shapes using Primitive Haxe and then rendered using HaxeFlixel sprites.
+This [demo](http://tw1ddle.github.io/primitive-haxe-demo/) shows how images can be converted to shapes using Primitive Haxe and then rendered as HaxeFlixel sprites.
 
 [![Mona Lisa](https://github.com/Tw1ddle/primitive-haxe-demo/blob/master/screenshots/mona_lisa_rectangles.jpg?raw=true "Mona Lisa as rectangles")](https://github.com/Tw1ddle/primitive-haxe-demo/)
 
-The leftmost sprite shows the *target image*, the second shows the *current image* rendered by the Primitive Haxe library, the third shows a version of the *current image* with shapes rendered by the HaxeFlixel game engine, and the rightmost image shows shape(s) that were added during the last step of the algorithm.
+The leftmost sprite shows the *target image*, the second shows the *current image* rendered by the Primitive Haxe library, the third shows a version of the *current image* with shapes rendered by the HaxeFlixel game engine, and the rightmost shows shape(s) that were added during the last step of the algorithm.
 
-Open the live demo in a web browser, and watch and wait. Left click to cycle the example image being geometrized.
+Open the [demo](http://tw1ddle.github.io/primitive-haxe-demo/) in a web browser. Left click to cycle the example image being geometrized.
 
 Note that the first shapes that are added usually take longest, since these shapes take the longest to rasterize.
 
