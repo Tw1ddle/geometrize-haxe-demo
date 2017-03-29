@@ -22,16 +22,16 @@
     <class path="C:\HaxeToolkit\haxe\lib\sure\0,1,1" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\3,6,1\extern" />
     <class path="lib\primitive" />
-    <class path="bin\windows\cpp\haxe" />
+    <class path="bin\html5\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="flixel=4.2.1&#xA;openfl=3.6.1&#xA;lime=2.9.1&#xA;hscript=2.0.7&#xA;sure=0.1.1&#xA;HXCPP_QUIET&#xA;openfl-next&#xA;FLX_NO_GAMEPAD&#xA;FLX_NO_FOCUS_LOST_SCREEN&#xA;tools=2.9.1&#xA;FLX_NO_DEBUG&#xA;no-compilation&#xA;native&#xA;FLX_NO_TOUCH&#xA;lime-native&#xA;openfl-native&#xA;windows&#xA;desktop&#xA;display" />
+    <option directives="flixel=4.2.1&#xA;openfl=3.6.1&#xA;lime=2.9.1&#xA;hscript=2.0.7&#xA;sure=0.1.1&#xA;HXCPP_QUIET&#xA;openfl-next&#xA;FLX_NO_GAMEPAD&#xA;FLX_NO_FOCUS_LOST_SCREEN&#xA;tools=2.9.1&#xA;FLX_NO_DEBUG&#xA;no-compilation&#xA;openfl-html5&#xA;canvas&#xA;lime-html5&#xA;html5&#xA;web&#xA;html5&#xA;display" />
     <option flashStrict="False" />
     <option noInlineOnDebug="True" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="#--macro keep('IntIterator')&#xA;--remap flash:openfl&#xA;--macro flixel.system.macros.FlxDefines.run()&#xA;#--macro keep(&quot;Main&quot;)" />
+    <option additional="#--macro keep('IntIterator')&#xA;--remap flash:openfl&#xA;--macro flixel.system.macros.FlxDefines.run()&#xA;--macro allowPackage(&quot;flash&quot;)" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

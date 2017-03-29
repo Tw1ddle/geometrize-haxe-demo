@@ -6,7 +6,7 @@ import openfl.events.MouseEvent;
 import primitive.runner.ImageRunner.ImageRunnerOptions;
 
 /**
- * Helper class for associating an image resource and a set of options for generating primitives from the image.
+ * Helper class for associating an image resource with a set of options for generating primitives from the image.
  */
 class ImageJob {
 	public function new(sourceImagePath:String, imageRunnerOptions:ImageRunnerOptions) {
@@ -30,7 +30,6 @@ class PlayState extends FlxState {
 		new ImageJob("images/pearlearring.png", new ImageRunnerOptions()),
 		new ImageJob("images/pine_forest_shishkin.png", new ImageRunnerOptions()),
 		new ImageJob("images/stanczyk.png", new ImageRunnerOptions()),
-		new ImageJob("images/primitive_haxe.png", new ImageRunnerOptions()),
 		new ImageJob("images/test/gradient_black_to_white.png", new ImageRunnerOptions()),
 		new ImageJob("images/test/gradient_red_to_black.png", new ImageRunnerOptions()),
 		new ImageJob("images/test/gradient_red_to_white.png", new ImageRunnerOptions())
@@ -44,10 +43,10 @@ class PlayState extends FlxState {
 		super.create();
 		persistentUpdate = true;
 		
-		openNextJob();
+		openNextJob(); // Start geometrizing the initial example image
 		
+		// Cycle through examples images on mouse click
 		Lib.current.stage.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):Void {
-			// Cycle through image jobs on mouse click
 			openNextJob();
 		});
 	}

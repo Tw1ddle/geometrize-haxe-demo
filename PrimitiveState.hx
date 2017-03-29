@@ -24,13 +24,13 @@ import primitive.shape.Triangle;
  */
 class PrimitiveState extends FlxSubState {
 	/**
-	 * The test image to be approximated as a set of primitives.
+	 * The input image that will be be approximated as a set of primitives.
 	 */
 	private var sourceImage:FlxSprite;
 	/**
 	 * Sprite that has the image data from the Primitive Haxe model rendered to it continually.
 	 */
-	private var targetImage:FlxSprite;
+	private var currentImage:FlxSprite;
 	/**
 	 * Sprite that has the shape data from the Primitive Haxe model rendered to it continually.
 	 */
@@ -80,10 +80,10 @@ class PrimitiveState extends FlxSubState {
 		var sourceBitmap:Bitmap = Bitmap.createFromBytes(width, height, sourceImage.graphic.bitmap.getPixels(new openfl.geom.Rectangle(0, 0, width, height)));
 		var sourceBytes:Bytes = sourceBitmap.clone().getBytes();
 		
-		targetImage = makeSprite(sourceImage.x + width);
-		add(targetImage);
+		currentImage = makeSprite(sourceImage.x + width);
+		add(currentImage);
 		
-		shapeImage = makeSprite(targetImage.x + width, 0);
+		shapeImage = makeSprite(currentImage.x + width, 0);
 		add(shapeImage);
 		
 		currentShapeImage = makeSprite(shapeImage.x + width, 0);
@@ -105,9 +105,9 @@ class PrimitiveState extends FlxSubState {
 		
 		// Draw the primitive image onto a Flixel sprite, setting the Primitive Haxe data directly
 		var imageData:Bitmap = runner.getImageData().clone();
-		targetImage.graphic.bitmap.setPixels(new openfl.geom.Rectangle(0, 0, targetImage.width, targetImage.height), ByteArray.fromBytes(PixelFormat.rgbaToArgb(imageData.getBytes())));
-		targetImage.dirty = true;
-		targetImage.updateFramePixels();
+		currentImage.graphic.bitmap.setPixels(new openfl.geom.Rectangle(0, 0, currentImage.width, currentImage.height), ByteArray.fromBytes(PixelFormat.rgbaToArgb(imageData.getBytes())));
+		currentImage.dirty = true;
+		currentImage.updateFramePixels();
 		
 		// Draw new shape data into some Flixel sprites
 		if (!initialShapeImageFilled) {
