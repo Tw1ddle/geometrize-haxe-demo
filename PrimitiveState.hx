@@ -45,7 +45,6 @@ class PrimitiveState extends FlxSubState {
 	 * The runner that will do the image conversion.
 	 */
 	private var runner:ImageRunner;
-	
 	/**
 	 * The runtime options that the runner uses.
 	 */
@@ -56,6 +55,12 @@ class PrimitiveState extends FlxSubState {
 		sourceImage = new FlxSprite(0, 0, sourceImagePath); // Load the source/target image
 		this.runnerOptions = runnerOptions;
 	}
+	
+	#if flash
+	private var pixelConversionFunc:Bytes->Bytes = PixelFormatHelpers.rgbaToBgra;
+	#else
+	private var pixelConversionFunc:Bytes->Bytes = PixelFormatHelpers.rgbaToArgb;
+	#end
 	
 	/**
 	 * Setup the demo.
@@ -90,7 +95,7 @@ class PrimitiveState extends FlxSubState {
 		add(currentShapeImage);
 		
 		// Specify the conversion options
-		var sourceCopy = PixelFormat.argbToRgba(sourceBitmap.clone().getBytes());
+		var sourceCopy = PixelFormatHelpers.argbToRgba(sourceBitmap.clone().getBytes());
 		runner = new ImageRunner(Bitmap.createFromBytes(width, height, sourceCopy));
 	}
 	
@@ -105,7 +110,7 @@ class PrimitiveState extends FlxSubState {
 		
 		// Draw the primitive image onto a Flixel sprite, setting the Primitive Haxe data directly
 		var imageData:Bitmap = runner.getImageData().clone();
-		currentImage.graphic.bitmap.setPixels(new openfl.geom.Rectangle(0, 0, currentImage.width, currentImage.height), ByteArray.fromBytes(PixelFormat.rgbaToArgb(imageData.getBytes())));
+		currentImage.graphic.bitmap.setPixels(new openfl.geom.Rectangle(0, 0, currentImage.width, currentImage.height), ByteArray.fromBytes(pixelConversionFunc(imageData.getBytes())));
 		currentImage.dirty = true;
 		currentImage.updateFramePixels();
 		

@@ -7,6 +7,7 @@ import primitive.runner.ImageRunner.ImageRunnerOptions;
 
 /**
  * Helper class for associating an image resource with a set of options for generating primitives from the image.
+ * @author Sam Twidale (http://samcodes.co.uk/)
  */
 class ImageJob {
 	public function new(sourceImagePath:String, imageRunnerOptions:ImageRunnerOptions) {
