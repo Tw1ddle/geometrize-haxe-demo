@@ -9,14 +9,17 @@ import openfl.utils.ByteArray;
 import primitive.Model.ShapeResult;
 import primitive.Util;
 import primitive.bitmap.Bitmap;
-import primitive.bitmap.PixelFormat;
+import primitive.bitmap.Rgba;
 import primitive.runner.ImageRunner;
+import primitive.runner.ImageRunnerOptions;
 import primitive.shape.Circle;
 import primitive.shape.Ellipse;
+import primitive.shape.Line;
 import primitive.shape.Rectangle;
 import primitive.shape.RotatedEllipse;
 import primitive.shape.RotatedRectangle;
 import primitive.shape.Triangle;
+import flixel.math.FlxPoint;
 
 /**
  * Simple image conversion demo for Primitive Haxe. Converts an image into a set of primitives.
@@ -63,6 +66,11 @@ class PrimitiveState extends FlxSubState {
 	#end
 	
 	/**
+	 * The background color of the source image.
+	 */
+	private var backgroundColor:Rgba;
+	
+	/**
 	 * Setup the demo.
 	 */
 	override public function create():Void {
@@ -96,7 +104,9 @@ class PrimitiveState extends FlxSubState {
 		
 		// Specify the conversion options
 		var sourceCopy = PixelFormatHelpers.argbToRgba(sourceBitmap.clone().getBytes());
-		runner = new ImageRunner(Bitmap.createFromBytes(width, height, sourceCopy));
+		var sourceBitmap:Bitmap = Bitmap.createFromBytes(width, height, sourceCopy);
+		backgroundColor = Util.getAverageImageColor(sourceBitmap);
+		runner = new ImageRunner(sourceBitmap, backgroundColor);
 	}
 	
 	/**
@@ -116,11 +126,11 @@ class PrimitiveState extends FlxSubState {
 		
 		// Draw new shape data into some Flixel sprites
 		if (!initialShapeImageFilled) {
-			FlxSpriteUtil.fill(shapeImage, FlxColor.fromRGB(runner.backgroundColor.r, runner.backgroundColor.g, runner.backgroundColor.b, runner.backgroundColor.a));
+			FlxSpriteUtil.fill(shapeImage, FlxColor.fromRGB(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a));
 			initialShapeImageFilled = true;
 		}
 		
-		FlxSpriteUtil.fill(currentShapeImage, FlxColor.fromRGB(runner.backgroundColor.r, runner.backgroundColor.g, runner.backgroundColor.b, runner.backgroundColor.a)); // Clear the current shape image
+		FlxSpriteUtil.fill(currentShapeImage, FlxColor.fromRGB(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a)); // Clear the current shape image
 		
 		for (result in shapeData) {
 			var color:FlxColor = FlxColor.fromRGB(result.color.r, result.color.g, result.color.b, result.color.a);
@@ -136,7 +146,7 @@ class PrimitiveState extends FlxSubState {
 					};
 					drawRect(shapeImage);
 					drawRect(currentShapeImage);
-				case Ellipse, Circle:
+				case Circle, Ellipse:
 					var ellipse:Ellipse = cast result.shape;
 					var drawEllipse = function(sprite:FlxSprite) {
 						FlxSpriteUtil.drawEllipse(sprite, ellipse.x - ellipse.rx, ellipse.y - ellipse.ry, ellipse.rx * 2, ellipse.ry * 2, color);
@@ -146,24 +156,31 @@ class PrimitiveState extends FlxSubState {
 				case RotatedEllipse:
 					var ellipse:RotatedEllipse = cast result.shape;
 					var drawRotatedEllipse = function(sprite:FlxSprite) {
-						//TODO
+						trace("Flixel rendering of rotated ellipses not implemented"); //TODO
 					}
 					drawRotatedEllipse(shapeImage);
 					drawRotatedEllipse(currentShapeImage);
 				case RotatedRectangle:
 					var rotatedRectangle:RotatedRectangle = cast result.shape;
 					var drawRotatedRectangle = function(sprite:FlxSprite) {
-						//FlxSpriteUtil.drawPolygon // TODO
+						trace("Flixel rendering of rotated rectangles not implemented"); // TODO
 					}
 					drawRotatedRectangle(shapeImage);
 					drawRotatedRectangle(currentShapeImage);
 				case Triangle:
 					var triangle:Triangle = cast result.shape;
 					var drawTriangle = function(sprite:FlxSprite) {
-						//FlxSpriteUtil.drawPolygon // TODO
+						FlxSpriteUtil.drawPolygon(sprite, [ new FlxPoint(triangle.x1, triangle.y1), new FlxPoint(triangle.x2, triangle.y2), new FlxPoint(triangle.x3, triangle.y3) ], color);
 					}
 					drawTriangle(shapeImage);
 					drawTriangle(currentShapeImage);
+				case Line:
+					var line:Line = cast result.shape;
+					var drawLine = function(sprite:FlxSprite) {
+						FlxSpriteUtil.drawLine(sprite, line.x1, line.y1, line.x2, line.y2, { thickness: 1.0, color: color });
+					}
+					drawLine(shapeImage);
+					drawLine(currentShapeImage);
 				default:
 					throw "Cannot render, unhandled shape type";
 			}

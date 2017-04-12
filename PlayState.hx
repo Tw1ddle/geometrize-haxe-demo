@@ -3,7 +3,8 @@ package;
 import flixel.FlxState;
 import openfl.Lib;
 import openfl.events.MouseEvent;
-import primitive.runner.ImageRunner.ImageRunnerOptions;
+import primitive.runner.ImageRunnerOptions;
+import primitive.shape.ShapeType;
 
 /**
  * Helper class for associating an image resource with a set of options for generating primitives from the image.
@@ -25,15 +26,15 @@ class ImageJob {
  */
 class PlayState extends FlxState {
 	private var imageJobs:Array<ImageJob> = [
-		new ImageJob("images/chomsky.png", new ImageRunnerOptions()),
-		new ImageJob("images/lady_of_shalott_waterhouse.png", new ImageRunnerOptions()),
-		new ImageJob("images/mona.png", new ImageRunnerOptions()),
-		new ImageJob("images/pearlearring.png", new ImageRunnerOptions()),
-		new ImageJob("images/pine_forest_shishkin.png", new ImageRunnerOptions()),
-		new ImageJob("images/stanczyk.png", new ImageRunnerOptions()),
-		new ImageJob("images/test/gradient_black_to_white.png", new ImageRunnerOptions()),
-		new ImageJob("images/test/gradient_red_to_black.png", new ImageRunnerOptions()),
-		new ImageJob("images/test/gradient_red_to_white.png", new ImageRunnerOptions())
+		new ImageJob("images/lady_of_shalott_waterhouse.png", new ImageRunnerOptions( [ ShapeType.ELLIPSE, ShapeType.TRIANGLE ])),
+		new ImageJob("images/chomsky.png", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
+		new ImageJob("images/mona.png", new ImageRunnerOptions([ ShapeType.ELLIPSE, ShapeType.CIRCLE ])),
+		new ImageJob("images/pearlearring.png", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
+		new ImageJob("images/pine_forest_shishkin.png", new ImageRunnerOptions([ ShapeType.RECTANGLE ])),
+		new ImageJob("images/stanczyk.png", new ImageRunnerOptions([ ShapeType.ROTATED_ELLIPSE ])),
+		new ImageJob("images/test/gradient_black_to_white.png", new ImageRunnerOptions([ ShapeType.CIRCLE ])),
+		new ImageJob("images/test/gradient_red_to_black.png", new ImageRunnerOptions([ ShapeType.RECTANGLE ])),
+		new ImageJob("images/test/gradient_red_to_white.png", new ImageRunnerOptions([ ShapeType.LINE ]))
 	];
 	private var imageJobIdx:Int = 0;
 	
