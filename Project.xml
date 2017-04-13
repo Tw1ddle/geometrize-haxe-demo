@@ -2,8 +2,8 @@
 <project>
 	<!------------------------------APPLICATION SETTINGS---------------------------->
 	
-	<meta title="PrimitiveDemo" package="uk.co.samcodes.primitivedemo" version="1.0.0" company="Sam Twidale" />
-	<app file="PrimitiveDemo" main="Main" />
+	<meta title="GeometrizeDemo" package="uk.co.samcodes.geometrizedemo" version="1.0.0" company="Sam Twidale" />
+	<app file="GeometrizeDemo" main="Main" />
 	
 	<!--------------------------------WINDOW SETTINGS------------------------------->
 	
@@ -23,8 +23,8 @@
 	
 	<haxelib name="flixel" />
 	
-	<include path="lib/primitive" />
-	<!-- <haxelib name="primitive" /> -->
+	<include path="lib/geometrize" />
+	<!-- <haxelib name="geometrize" /> -->
 	
 	<!---------------------------------ASSETS--------------------------------------->
 	

@@ -6,41 +6,41 @@ import flixel.util.FlxColor;
 import flixel.util.FlxSpriteUtil;
 import haxe.io.Bytes;
 import openfl.utils.ByteArray;
-import primitive.Model.ShapeResult;
-import primitive.Util;
-import primitive.bitmap.Bitmap;
-import primitive.bitmap.Rgba;
-import primitive.runner.ImageRunner;
-import primitive.runner.ImageRunnerOptions;
-import primitive.shape.Circle;
-import primitive.shape.Ellipse;
-import primitive.shape.Line;
-import primitive.shape.Rectangle;
-import primitive.shape.RotatedEllipse;
-import primitive.shape.RotatedRectangle;
-import primitive.shape.Triangle;
+import geometrize.Model.ShapeResult;
+import geometrize.Util;
+import geometrize.bitmap.Bitmap;
+import geometrize.bitmap.Rgba;
+import geometrize.runner.ImageRunner;
+import geometrize.runner.ImageRunnerOptions;
+import geometrize.shape.Circle;
+import geometrize.shape.Ellipse;
+import geometrize.shape.Line;
+import geometrize.shape.Rectangle;
+import geometrize.shape.RotatedEllipse;
+import geometrize.shape.RotatedRectangle;
+import geometrize.shape.Triangle;
 import flixel.math.FlxPoint;
 
 /**
- * Simple image conversion demo for Primitive Haxe. Converts an image into a set of primitives.
+ * Simple image conversion demo state for Geometrize Haxe. Recreates an image as a collection of shapes.
  * @author Sam Twidale (http://samcodes.co.uk/)
  */
-class PrimitiveState extends FlxSubState {
+class GeometrizeState extends FlxSubState {
 	/**
-	 * The input image that will be be approximated as a set of primitives.
+	 * The input image that will be be approximated as a collection of shapes.
 	 */
 	private var sourceImage:FlxSprite;
 	/**
-	 * Sprite that has the image data from the Primitive Haxe model rendered to it continually.
+	 * Sprite that has the image data from the Geometrize Haxe model rendered to it continually.
 	 */
 	private var currentImage:FlxSprite;
 	/**
-	 * Sprite that has the shape data from the Primitive Haxe model rendered to it continually.
+	 * Sprite that has the shape data from the Geometrize Haxe model rendered to it continually.
 	 */
 	private var initialShapeImageFilled:Bool = false;
 	private var shapeImage:FlxSprite;
 	/**
-	 * Sprite that has only shape data from the most recent step of the Primitive Haxe model rendered to it.
+	 * Sprite that has only shape data from the most recent step of the Geometrize Haxe model rendered to it.
 	 */
 	private var currentShapeImage:FlxSprite;
 	
@@ -89,7 +89,7 @@ class PrimitiveState extends FlxSubState {
 			return sprite;
 		}
 		
-		// Convert and draw the original image using Primitive Haxe, to check this much works properly
+		// Convert and draw the original image using Geometrize Haxe, to check this much works properly
 		var sourceBitmap:Bitmap = Bitmap.createFromBytes(width, height, sourceImage.graphic.bitmap.getPixels(new openfl.geom.Rectangle(0, 0, width, height)));
 		var sourceBytes:Bytes = sourceBitmap.clone().getBytes();
 		
@@ -118,7 +118,7 @@ class PrimitiveState extends FlxSubState {
 		
 		var shapeData:Array<ShapeResult> = runner.step(runnerOptions); // Step the algorithm
 		
-		// Draw the primitive image onto a Flixel sprite, setting the Primitive Haxe data directly
+		// Draw the image onto a HaxeFlixel sprite, setting the Geometrize Haxe data directly
 		var imageData:Bitmap = runner.getImageData().clone();
 		currentImage.graphic.bitmap.setPixels(new openfl.geom.Rectangle(0, 0, currentImage.width, currentImage.height), ByteArray.fromBytes(pixelConversionFunc(imageData.getBytes())));
 		currentImage.dirty = true;

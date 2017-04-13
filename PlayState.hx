@@ -3,11 +3,11 @@ package;
 import flixel.FlxState;
 import openfl.Lib;
 import openfl.events.MouseEvent;
-import primitive.runner.ImageRunnerOptions;
-import primitive.shape.ShapeType;
+import geometrize.runner.ImageRunnerOptions;
+import geometrize.shape.ShapeType;
 
 /**
- * Helper class for associating an image resource with a set of options for generating primitives from the image.
+ * Helper class for associating an image resource with a set of options for generating shapes based on the image.
  * @author Sam Twidale (http://samcodes.co.uk/)
  */
 class ImageJob {
@@ -21,7 +21,7 @@ class ImageJob {
 }
 
 /**
- * Simple image conversion demo for Primitive Haxe. Converts an image into a set of primitives.
+ * Simple image conversion demo for Geometrize Haxe. Recreates images as collections of shapes.
  * @author Sam Twidale (http://samcodes.co.uk/)
  */
 class PlayState extends FlxState {
@@ -57,6 +57,6 @@ class PlayState extends FlxState {
 		var job:ImageJob = imageJobs[imageJobIdx];
 		imageJobIdx++;
 		imageJobIdx %= imageJobs.length;
-		openSubState(new PrimitiveState(job.sourceImagePath, job.imageRunnerOptions));
+		openSubState(new GeometrizeState(job.sourceImagePath, job.imageRunnerOptions));
 	}
 }
