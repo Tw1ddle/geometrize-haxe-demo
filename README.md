@@ -12,8 +12,6 @@ The [demo](http://tw1ddle.github.io/geometrize-haxe-demo/) shows how images can 
 
 The leftmost sprite shows the input image, the second shows the shapes image rendered by the Geometrize Haxe library, the third shows the shape image rendered by the HaxeFlixel game engine, and the rightmost show the most recently added shape.
 
-Note that the first shapes usually take longest to add, since these take the longest to rasterize.
-
 ## Screenshots
 
 [![Geometrized Chomsky](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/chomsky.jpg?raw=true "Chomsky")](https://github.com/Tw1ddle/geometrize-haxe-demo/)
@@ -27,6 +25,7 @@ Note that the first shapes usually take longest to add, since these take the lon
 * See the HaxeFlixel Geometrize [demo](http://tw1ddle.github.io/geometrize-haxe-demo/) and the [demo code](https://github.com/Tw1ddle/geometrize-haxe-demo/).
 
 ## Notes
+* This implementation is single-threaded, and performance varies by target platform. The first shapes usually take the longest to add, since larger shapes take longer to rasterize. Small target images are recommended - you probably do not need the detail anyway.
 * Got an idea or suggestion? Open an issue on GitHub, or send Sam a message on [Twitter](https://twitter.com/Sam_Twidale).
 * Geometrize Haxe is based on [primitive](https://github.com/fogleman/primitive), a Go library created by [Michael Fogleman](https://github.com/fogleman).
 * Geometrize Haxe is available as a [haxelib](https://lib.haxe.org/p/geometrize-haxe).
