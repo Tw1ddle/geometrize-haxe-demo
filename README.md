@@ -6,15 +6,18 @@
 
 ## Usage
 
-This [demo](http://tw1ddle.github.io/geometrize-haxe-demo/) shows how images can be converted to shapes using Geometrize Haxe and then rendered as HaxeFlixel sprites.
+The [demo](http://tw1ddle.github.io/geometrize-haxe-demo/) shows how images can be converted to shapes using Geometrize Haxe and then rendered as HaxeFlixel sprites. Open the demo and left click to cycle the example image being geometrized.
 
 [![Geometrized Mona Lisa](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/monalisa.jpg?raw=true "Mona Lisa - Ellipses")](https://github.com/Tw1ddle/geometrize-haxe-demo/)
 
-The leftmost sprite shows the *target image*, the second shows the *current image* rendered by the Geometrize Haxe library, the third shows a version of the *current image* with shapes rendered by the HaxeFlixel game engine, and the rightmost shows shape(s) that were added during the last step of the algorithm.
+The leftmost sprite shows the input image, the second shows the shapes image rendered by the Geometrize Haxe library, the third shows the shape image rendered by the HaxeFlixel game engine, and the rightmost show the most recently added shape.
 
-Open the [demo](http://tw1ddle.github.io/geometrize-haxe-demo/) in a web browser. Left click to cycle the example image being geometrized.
+Note that the first shapes usually take longest to add, since these take the longest to rasterize.
 
-Note that the first shapes that are added usually take longest, since these shapes take the longest to rasterize.
+## Screenshots
+
+[![Geometrized Chomsky](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/chomsky.jpg?raw=true "Chomsky")](https://github.com/Tw1ddle/geometrize-haxe-demo/)
+[![Geometrized Surfer](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/surfer.jpg?raw=true "Surfer")](https://github.com/Tw1ddle/geometrize-haxe-demo/)
 
 ## Resources
 
@@ -22,11 +25,6 @@ Note that the first shapes that are added usually take longest, since these shap
 * See the Geometrize [haxelib code](https://github.com/Tw1ddle/geometrize-haxe) and library [documentation](http://tw1ddle.github.io/geometrize-haxe/).
 * See the Geometrize [web demo](http://www.samcodes.co.uk/project/geometrize-haxe-web/) and web [demo code](https://github.com/Tw1ddle/geometrize-haxe-web/).
 * See the HaxeFlixel Geometrize [demo](http://tw1ddle.github.io/geometrize-haxe-demo/) and the [demo code](https://github.com/Tw1ddle/geometrize-haxe-demo/).
-
-## Screenshots
-
-[![Geometrized Chomsky](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/chomsky.jpg?raw=true "Chomsky")](https://github.com/Tw1ddle/geometrize-haxe-demo/)
-[![Geometrized Surfer](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/surfer.jpg?raw=true "Surfer")](https://github.com/Tw1ddle/geometrize-haxe-demo/)
 
 ## Notes
 * Got an idea or suggestion? Open an issue on GitHub, or send Sam a message on [Twitter](https://twitter.com/Sam_Twidale).
