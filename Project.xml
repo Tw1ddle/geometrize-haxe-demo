@@ -64,6 +64,9 @@
 	
 	<haxedef name="Dfdb" if="flash"/>
 	
+	<!-- Enable full dead code elimination for js/html5 -->
+	<haxeflag name="-dce full" if="html5" />
+	
 	<!---------------------------------CUSTOM---------------------------------->
 	
 	<!--The swf version should be at least 11.2 without FLX_NO_MOUSE_ADVANCED -->
