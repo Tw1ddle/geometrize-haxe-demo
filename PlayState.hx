@@ -26,15 +26,12 @@ class ImageJob {
  */
 class PlayState extends FlxState {
 	private var imageJobs:Array<ImageJob> = [
-		new ImageJob("images/lady_of_shalott_waterhouse.png", new ImageRunnerOptions( [ ShapeType.ELLIPSE, ShapeType.TRIANGLE ])),
-		new ImageJob("images/chomsky.png", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
-		new ImageJob("images/mona.png", new ImageRunnerOptions([ ShapeType.ELLIPSE, ShapeType.CIRCLE ])),
-		new ImageJob("images/pearlearring.png", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
-		new ImageJob("images/pine_forest_shishkin.png", new ImageRunnerOptions([ ShapeType.RECTANGLE ])),
-		new ImageJob("images/stanczyk.png", new ImageRunnerOptions([ ShapeType.ROTATED_ELLIPSE ])),
-		new ImageJob("images/test/gradient_black_to_white.png", new ImageRunnerOptions([ ShapeType.CIRCLE ])),
-		new ImageJob("images/test/gradient_red_to_black.png", new ImageRunnerOptions([ ShapeType.RECTANGLE ])),
-		new ImageJob("images/test/gradient_red_to_white.png", new ImageRunnerOptions([ ShapeType.LINE ]))
+		new ImageJob("images/lady_of_shalott_waterhouse.jpg", new ImageRunnerOptions( [ ShapeType.ELLIPSE, ShapeType.TRIANGLE ])),
+		new ImageJob("images/chomsky.jpg", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
+		new ImageJob("images/mona.jpg", new ImageRunnerOptions([ ShapeType.ELLIPSE, ShapeType.CIRCLE ])),
+		new ImageJob("images/pearlearring.jpg", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
+		new ImageJob("images/pine_forest_shishkin.jpg", new ImageRunnerOptions([ ShapeType.RECTANGLE ])),
+		new ImageJob("images/stanczyk.jpg", new ImageRunnerOptions([ ShapeType.ROTATED_ELLIPSE ]))
 	];
 	private var imageJobIdx:Int = 0;
 	
