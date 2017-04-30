@@ -1,0 +1,23 @@
+sudo: required
+dist: trusty
+
+language: haxe
+
+os:
+  - linux
+
+# see haxe versions: http://haxe.org/website-content/downloads/versions.json
+haxe:
+  - "3.4.2"
+
+install:
+  - haxelib install hxcpp > /dev/null
+  - haxelib install lime 2.9.1 > /dev/null
+  - haxelib install openfl 3.6.1 > /dev/null
+  - haxelib install flixel > /dev/null
+  - haxelib list
+
+script:
+  - haxelib run openfl build "Project.xml" flash
+  - haxelib run openfl build "Project.xml" html5
+  - haxelib run openfl build "Project.xml" linux
