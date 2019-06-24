@@ -12,8 +12,8 @@ haxe:
 
 install:
   - haxelib install hxcpp
-  - haxelib install lime 2.9.1
-  - haxelib install openfl 3.6.1
+  - haxelib install lime
+  - haxelib install openfl
   - haxelib install flixel
   - haxelib install sure
   - haxelib list

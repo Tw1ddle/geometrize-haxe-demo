@@ -59,11 +59,7 @@ class GeometrizeState extends FlxSubState {
 		this.runnerOptions = runnerOptions;
 	}
 	
-	#if flash
 	private var pixelConversionFunc:Bytes->Bytes = PixelFormatHelpers.rgbaToBgra;
-	#else
-	private var pixelConversionFunc:Bytes->Bytes = PixelFormatHelpers.rgbaToArgb;
-	#end
 	
 	/**
 	 * The background color of the source image.
