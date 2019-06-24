@@ -26,12 +26,12 @@ class ImageJob {
  */
 class PlayState extends FlxState {
 	private var imageJobs:Array<ImageJob> = [
-		new ImageJob("images/lady_of_shalott_waterhouse.jpg", new ImageRunnerOptions( [ ShapeType.ELLIPSE, ShapeType.TRIANGLE ])),
-		new ImageJob("images/chomsky.jpg", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
-		new ImageJob("images/mona.jpg", new ImageRunnerOptions([ ShapeType.ELLIPSE, ShapeType.CIRCLE ])),
-		new ImageJob("images/pearlearring.jpg", new ImageRunnerOptions([ ShapeType.TRIANGLE ])),
-		new ImageJob("images/pine_forest_shishkin.jpg", new ImageRunnerOptions([ ShapeType.RECTANGLE ])),
-		new ImageJob("images/stanczyk.jpg", new ImageRunnerOptions([ ShapeType.ROTATED_ELLIPSE ]))
+		new ImageJob("images/lady_of_shalott_waterhouse.jpg", { shapeTypes: [ ShapeType.ELLIPSE, ShapeType.TRIANGLE ], alpha: 128, candidateShapesPerStep: 50, shapeMutationsPerStep: 50 }),
+		new ImageJob("images/chomsky.jpg",{ shapeTypes: [ ShapeType.TRIANGLE ], alpha: 128, candidateShapesPerStep: 50, shapeMutationsPerStep: 50 }),
+		new ImageJob("images/mona.jpg", { shapeTypes: [ ShapeType.ELLIPSE, ShapeType.CIRCLE ], alpha: 128, candidateShapesPerStep: 50, shapeMutationsPerStep: 50 }),
+		new ImageJob("images/pearlearring.jpg", { shapeTypes: [ ShapeType.TRIANGLE ], alpha: 128, candidateShapesPerStep: 50, shapeMutationsPerStep: 50 }),
+		new ImageJob("images/pine_forest_shishkin.jpg", { shapeTypes: [ ShapeType.RECTANGLE ], alpha: 128, candidateShapesPerStep: 50, shapeMutationsPerStep: 50 }),
+		new ImageJob("images/stanczyk.jpg", { shapeTypes: [ ShapeType.ROTATED_ELLIPSE ], alpha: 128, candidateShapesPerStep: 50, shapeMutationsPerStep: 50 })
 	];
 	private var imageJobIdx:Int = 0;
 	
