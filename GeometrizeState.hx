@@ -23,7 +23,7 @@ import flixel.math.FlxPoint;
 
 /**
  * Simple image conversion demo state for Geometrize Haxe. Recreates an image as a collection of shapes.
- * @author Sam Twidale (http://samcodes.co.uk/)
+ * @author Sam Twidale (https://samcodes.co.uk/)
  */
 class GeometrizeState extends FlxSubState {
 	/**

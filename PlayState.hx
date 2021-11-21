@@ -8,7 +8,7 @@ import geometrize.shape.ShapeType;
 
 /**
  * Helper class for associating an image resource with a set of options for generating shapes based on the image.
- * @author Sam Twidale (http://samcodes.co.uk/)
+ * @author Sam Twidale (https://samcodes.co.uk/)
  */
 class ImageJob {
 	public function new(sourceImagePath:String, imageRunnerOptions:ImageRunnerOptions) {
@@ -22,7 +22,7 @@ class ImageJob {
 
 /**
  * Simple image conversion demo for Geometrize Haxe. Recreates images as collections of shapes.
- * @author Sam Twidale (http://samcodes.co.uk/)
+ * @author Sam Twidale (https://samcodes.co.uk/)
  */
 class PlayState extends FlxState {
 	private var imageJobs:Array<ImageJob> = [

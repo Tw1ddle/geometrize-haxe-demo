@@ -9,7 +9,7 @@ import flixel.FlxState;
 
 /**
  * Sets up the basic HaxeFlixel demo state.
- * @author Sam Twidale (http://samcodes.co.uk/)
+ * @author Sam Twidale (https://samcodes.co.uk/)
  */
 class Main extends Sprite {
 	var gameWidth:Int = 1800; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
