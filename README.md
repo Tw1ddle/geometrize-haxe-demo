@@ -1,6 +1,6 @@
 [![Project logo](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/screenshots/logo.png?raw=true "Geometrize Haxe recreating images as geometric primitives logo")](https://samcodes.co.uk/project/geometrize-haxe-flixel/)
 
-[![Build Status](https://img.shields.io/travis/Tw1ddle/geometrize-haxe-demo.svg?style=flat-square)](https://travis-ci.org/Tw1ddle/geometrize-haxe-demo)
+[![Build Status Badge](https://ci.appveyor.com/api/projects/status/github/Tw1ddle/geometrize-haxe-demo)](https://ci.appveyor.com/project/Tw1ddle/geometrize-haxe-demo)
 [![License](https://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/Tw1ddle/geometrize-haxe-demo/blob/master/LICENSE)
 
 [Geometrize Haxe](https://github.com/Tw1ddle/geometrize-haxe/) is a Haxe library for recreating images with geometric primitives. This demo shows the library working with HaxeFlixel - run it [in your browser](https://samcodes.co.uk/project/geometrize-haxe-flixel/).
